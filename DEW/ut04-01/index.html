@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UT04-01 Formulario usuarios-publicación</title>
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+<body>
+    <h1>UT04-01 Formulario usuarios-publicación</h1>
+    <form name="myForm" action="https://www.w3schools.com/action_page.php" method="post">
+        <fieldset>
+            <legend>Datos Usuario</legend>
+            <div>
+                <label for="username">Nombre de Usuario</label>
+                <input type="text" name="username" id="username" placeholder="UserName"/>   
+            </div>
+            <div>
+                <label for="contrasenia">Contraseña</label>
+                <input type="text" name="contrasenia" id="contrasenia" placeholder="Introduce Contraseña"/>
+            </div>
+            <div>
+                <input type="checkbox" name="mostrar-contrasenia" id="mostrar-contrasenia"/>
+                <label for="mostrar-contrasenia">Mostrar Contraseña</label> 
+            </div>
+            <!-- <label for="numero" min="0" max="100">Número</label>
+            <input type="number" name="numero" id="numero" value="0"/><br/>
+            <label for="telephone">Teléfono</label>
+            <input type="tel" name="telephone" id="telephone" placeholder="123456789"/><br/>
+            <input type="submit" value="Enviar" disabled/> -->
+        </fieldset>
+        <fieldset>
+            <legend>Datos Personales</legend>
+            <label for="nombre">Nombre</label>
+            <input type="text" name="nombre" id="nombre" placeholder="Nombre"/>
+            <label for="apellidos">Apellidos</label>
+            <input type="text" name="apellidos" id="apellidos" placeholder="Apellidos"/>
+            <label for="telephone">Teléfono</label>
+            <input type="tel" name="telephone" id="telephone" placeholder="Ejem: (+34)922123123"/>
+            <label for="postal">Código Postal</label>
+            <input type="tel" name="postal" id="postal" placeholder="38XXX"/>
+            <label for="dni-nie">DNI/NIE</label>
+            <select name ="dni-nie" id="dni-nie"  onchange="changeState()">
+                <option value="" >---</option>
+                <option value="dni">DNI</option>
+                <option value="nie">NIE</option>
+            </select>
+            <input type="text" name="dni--nie" id="dni--nie" placeholder="DNI/NIE" disabled/>
+            <label for="tipo-empresa">Crear cuenta como:</label>
+            <input type="radio" name="tipo-empresa" id="particular" value="particular"/>
+            <label for="particular">Particular</label>
+            <input type="radio" name="tipo-empresa" id="empresa" value="empresa"/>
+            <label for="empresa">Empresa</label>
+            <label for="birth-year">Año de Nacimiento</label>
+            <select name="birth-year" id="birth-year">
+                <option value="2010">2010</option>
+                <option value="2011">2011</option>
+                <option value="2012">2012</option>
+                <option value="2013">2013</option>
+                <option value="2014">2014</option>
+                <option value="2015">2015</option>
+                <option value="2016">2016</option>
+                <option value="2017">2017</option>
+                <option value="2018">2018</option>
+                <option value="2019">2019</option>
+                <option value="2020">2020</option>
+                <option value="2021">2021</option>
+                <option value="2022">2022</option>
+                <option value="2023">2023</option>
+                <option value="2024">2024</option>
+            </select>
+            <label for="birth-year">Elige tus aficiones:</label>
+            <input type="radio" name="music" id="music"/>
+            <label for="music">Música</label>
+            <input type="radio" name="sports" id="sports"/>
+            <label for="sports">Deporte</label>
+            <input type="radio" name="videogames" id="videogames"/>
+            <label for="videogames">Video Juegos</label>
+            <input type="radio" name="handcrafting" id="handcrafting"/>
+            <label for="handcrafting">Manualidades</label>
+            <input type="radio" name="art" id="art"/>
+            <label for="art">Artes</label>
+            <input type="radio" name="reading" id="reading"/>
+            <label for="reading">Lectura</label>
+        </fieldset>
+        <fieldset>
+            <legend>Datos Publicación</legend>
+            <label for="titulo">Título</label>
+            <input type="text" name="titulo" id="titulo" placeholder="Título" minlength="0" maxlength="15">
+            <label for="description">Descripción</label>
+            <textarea minlength="0" maxlength="120"></textarea>
+        </fieldset>
+        <input type="submit" value="Enviar">
+    </form>
+    <a href="../index.html">Volver</a>
+    <script src="./js/main.js"></script>
+</body>
+</html>
