@@ -13,7 +13,7 @@ legend{
 fieldset:first-child{
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 2em;
+    gap: 1em;
 }
 
 fieldset:first-child>div {
@@ -25,4 +25,50 @@ fieldset:first-child>div:last-child {
     grid-column: 2/3;
     display: flex;
     flex-direction: row;
+}
+
+fieldset:nth-child(2){
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2em;
+    section {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-column: 1/3;
+    }
+}
+fieldset:nth-child(2)>div{
+    display: flex;
+    flex-direction: column;
+}
+
+fieldset:nth-child(2)>div:last-child{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column: 1/3;
+    gap: 1.2em;
+    p{
+        grid-column: 1/4;
+    }
+}
+
+fieldset:nth-child(2)>section>div:last-child {
+    display: flex;
+    flex-direction: column;
+}
+
+fieldset:last-of-type{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+}
+
+fieldset:last-of-type>div{
+    display: flex;
+    flex-direction: column;
+    span{
+        text-align: end;
+        font-size: small;
+        color: lightgrey;
+    }
 }
