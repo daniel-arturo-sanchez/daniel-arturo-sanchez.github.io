@@ -5,6 +5,10 @@ body{
     font-family: Arial, Helvetica, sans-serif
 }
 
+input:invalid {
+    border: 2px solid red;
+  }
+
 legend{
     font-size: 1.3em;
     font-weight: 500;
