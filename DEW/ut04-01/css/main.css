@@ -6,7 +6,11 @@ body{
 }
 
 input:invalid {
-    border: 2px solid red;
+    border: 1px solid red;
+  }
+
+  textarea:invalid{
+    border: 1px solid red;
   }
 
 legend{
