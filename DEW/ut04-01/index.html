@@ -8,16 +8,16 @@
 </head>
 <body>
     <h1>UT04-01 Formulario usuarios-publicación</h1>
-    <form name="myForm" action="https://www.w3schools.com/action_page.php" method="post">
+    <form id="myForm" name="myForm" action="https://www.w3schools.com/action_page.php" method="post">
         <fieldset>
             <legend>Datos Usuario</legend>
             <div>
                 <label for="username">Nombre de Usuario</label>
-                <input type="text" name="username" id="username" placeholder="UserName"/>   
+                <input required type="text" name="username" id="username" placeholder="UserName"/>   
             </div>
             <div>
                 <label for="contrasenia">Contraseña</label>
-                <input type="password" name="contrasenia" id="contrasenia" placeholder="Introduce Contraseña"/>
+                <input required type="password" name="contrasenia" id="contrasenia" placeholder="Introduce Contraseña"/>
             </div>
             <div>
                 <input type="checkbox" name="mostrar-contrasenia" id="mostrar-contrasenia"/>
@@ -28,20 +28,20 @@
             <legend>Datos Personales</legend>
             <div>
                 <label for="nombre">Nombre</label>
-                <input type="text" name="nombre" id="nombre" placeholder="Nombre"/>
+                <input required type="text" name="nombre" id="nombre" placeholder="Nombre"/>
             </div>
 
             <div>
                 <label for="apellidos">Apellidos</label>
-                <input type="text" name="apellidos" id="apellidos" placeholder="Apellidos"/>
+                <input required type="text" name="apellidos" id="apellidos" placeholder="Apellidos"/>
             </div>
             <div>
                 <label for="telephone">Teléfono</label>
-                <input type="tel" name="telephone" id="telephone" placeholder="Ejem: (+34)922123123"/>    
+                <input required type="tel" name="telephone" id="telephone" placeholder="Ejem: (+34)922123123"/>    
             </div>
             <div>
                 <label for="postal">Código Postal</label>
-                <input type="tel" name="postal" id="postal" placeholder="38XXX"/>    
+                <input required type="tel" name="postal" id="postal" placeholder="38XXX"/>    
             </div>
             <section>
                 <div>
@@ -51,12 +51,12 @@
                         <option value="dni">DNI</option>
                         <option value="nie">NIE</option>
                     </select>
-                    <input type="text" name="dni--nie" id="dni--nie" placeholder="DNI/NIE" disabled/>
+                    <input required type="text" name="dni--nie" id="dni--nie" placeholder="DNI/NIE" disabled/>
                 </div>
                 <div>
                     <label for="tipo-empresa">Crear cuenta como:</label>
                     <div>
-                        <input type="radio" name="tipo-empresa" id="particular" value="particular"/>
+                        <input type="radio" name="tipo-empresa" id="particular" value="particular" checked/>
                         <label for="particular">Particular</label>
                         <input type="radio" name="tipo-empresa" id="empresa" value="empresa"/>
                         <label for="empresa">Empresa</label>
@@ -115,12 +115,12 @@
             <legend>Datos Publicación</legend>
             <div>
                 <label for="titulo">Título</label>
-                <input type="text" name="titulo" id="titulo" placeholder="Título" minlength="0" maxlength="15">
+                <input required type="text" name="titulo" id="titulo" placeholder="Título" minlength="0" maxlength="15">
                 <span id="title-length">0/15</span>
             </div>
             <div>
                 <label for="description">Descripción</label>
-                <textarea  id="description" on rows=5 minlength="0" maxlength="120"></textarea>
+                <textarea  id="description" name="description" rows="5" minlength="0" maxlength="120"></textarea>
                 <span id="description-length">0/120</span>
             </div>
         </fieldset>

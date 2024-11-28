@@ -1,13 +1,14 @@
-
+const formulario = document.querySelector("#myForm");
 const dniNie = document.querySelector("#dni-nie");
 const dniNieText = document.querySelector("#dni--nie");
 const titulo = document.querySelector("#titulo");
 const description = document.querySelector("#description");
 const titleLenght = document.querySelector("#title-length");
 const descriptionLength = document.querySelector("#description-length");
-dniNieText.setAttribute('disabled','true');
 const password = document.querySelector('#contrasenia');
 const showPassword = document.querySelector("#mostrar-contrasenia");
+
+dniNieText.setAttribute('disabled','true');
 
 dniNie.addEventListener("change", () => changeState()
 );
