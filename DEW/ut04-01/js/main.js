@@ -1,52 +1,61 @@
-const formulario = document.querySelector("#myForm");
-const dniNie = document.querySelector("#dni-nie");
-const dniNieText = document.querySelector("#dni--nie");
-const titulo = document.querySelector("#titulo");
-const description = document.querySelector("#description");
-const titleLenght = document.querySelector("#title-length");
-const descriptionLength = document.querySelector("#description-length");
-const password = document.querySelector('#contrasenia');
-const showPassword = document.querySelector("#mostrar-contrasenia");
-const anioNacimiento = document.querySelector("#birth-year");
+const DOM = {
+  formulario : document.querySelector("#myForm"),
+  username : document.querySelector("#username"),
+  dniNie : document.querySelector("#dni-nie"),
+  dniNieText : document.querySelector("#dni--nie"),
+  titulo : document.querySelector("#titulo"),
+  description : document.querySelector("#description"),
+  titleLenght : document.querySelector("#title-length"),
+  descriptionLength : document.querySelector("#description-length"),
+  password : document.querySelector('#contrasenia'),
+  showPassword : document.querySelector("#mostrar-contrasenia"),
+  anioNacimiento : document.querySelector("#birth-year"),
+};
 
 (function() {
     let anioMaximo = new Date(Date.now());
-    console.log(anioMaximo.getFullYear());
-
     for(let i=anioMaximo.getFullYear(); i > 1900; i--){
       let optionElement = document.createElement("option");
       optionElement.value=i;
       optionElement.textContent=i;
-      anioNacimiento.appendChild(optionElement);
+      DOM.anioNacimiento.appendChild(optionElement);
     }
   })();
 
-dniNieText.setAttribute('disabled','true');
+DOM.dniNieText.setAttribute('disabled','true');
 
-dniNie.addEventListener("change", () => changeState()
+DOM.dniNie.addEventListener("change", () => changeState()
 );
 //titulo
-titulo.addEventListener("change", ()=>updateCounter(titulo,titleLenght) );
-titulo.addEventListener("keyup", ()=>updateCounter(titulo, titleLenght) );
+DOM.titulo.addEventListener("change", ()=>updateCounter(DOM.titulo,DOM.titleLenght) );
+DOM.titulo.addEventListener("keyup", ()=>updateCounter(DOM.titulo, DOM.titleLenght) );
 //description
-description.addEventListener("change", ()=>updateCounter(description,descriptionLength) );
-description.addEventListener("keyup", ()=>updateCounter(description, descriptionLength) );
+DOM.description.addEventListener("change", ()=>updateCounter(DOM.description, DOM.descriptionLength) );
+DOM.description.addEventListener("keyup", ()=>updateCounter(DOM.description, DOM.descriptionLength) );
 //mostrar contraseña
-showPassword.addEventListener('change', ()=> showMyPassword())
+DOM.showPassword.addEventListener('change', ()=> showMyPassword());
+//formulario
+DOM.formulario.addEventListener('submit', (e) => {
+  console.log(DOM.username.validationMessage);
+  if(!DOM.username.validationMessage == "" ){
+    e.preventDefault();
+    alert(DOM.username.validationMessage);
+  }
+});
 
 function changeState() {
-    if (dniNie.selectedOptions[0].value !== "") {
-        dniNieText.removeAttribute('disabled');
+    if (DOM.dniNie.selectedOptions[0].value !== "") {
+      DOM.dniNieText.removeAttribute('disabled');
       } else {
-        dniNieText.setAttribute('disabled','true');
+        DOM.dniNieText.setAttribute('disabled','true');
       }
   }
 
 function showMyPassword(){
-  if(showPassword.checked){
-    password.type="text"
+  if(DOM.showPassword.checked){
+    DOM.password.type="text"
   } else {
-    password.type="password"
+    DOM.password.type="password"
   } 
 } 
 
