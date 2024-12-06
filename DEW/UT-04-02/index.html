@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UT04-01 Formulario usuarios-publicación</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <div class="main-container">
+        <section>
+            <h1>UT04-02 Formulario usuarios-publicación</h1>
+            <form id="formulario" name="formulario" action="https://www.w3schools.com/action_page.php" method="post" novalidate>
+                <fieldset>
+                    <legend>Datos Usuario</legend>
+                    <div>
+                        <label for="username">Nombre de Usuario</label>
+                        <input required type="text" pattern="[A-Za-z\-0-9]{4,20}" minlength="4" maxlength="20" name="NombreUsuario" id="username" placeholder="UserName"/>
+                        <span class="span-validator-message" id="nombreusuario-validator-message" hidden></span>
+                    </div>
+                    <div>
+                        <label for="contrasenia">Contraseña</label>
+                        <input required type="password" pattern="\d{8}" minlength="8" maxlength="8" name="Contrasena" id="contrasenia" placeholder="Introduce Contraseña"/>
+                        <span class="span-validator-message" id="contrasena-validator-message" hidden></span>
+                    </div>
+                    <div>
+                        <input type="checkbox" name="mostrar-contrasenia" id="mostrar-contrasenia"/>
+                        <label for="mostrar-contrasenia">Mostrar Contraseña</label> 
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <legend>Datos Personales</legend>
+                    <div>
+                        <label for="nombre">Nombre</label>
+                        <input required type="text"  pattern="[A-Za-z\-\s]{4,20}" minlength="4" maxlength="20" name="Nombre" id="nombre" placeholder="Nombre"/>
+                        <span class="span-validator-message" id="nombre-validator-message" hidden></span>
+                    </div>
+        
+                    <div>
+                        <label for="apellidos">Apellidos</label>
+                        <input required type="text"  pattern="[A-Za-z\-\s]{4,20}" minlength="4" maxlength="20" name="Apellidos" id="apellidos" placeholder="Apellidos"/>
+                        <span class="span-validator-message" id="apellidos-validator-message" hidden></span>
+                    </div>
+                    <div>
+                        <label for="telephone">Teléfono</label>
+                        <input required type="tel" name="Telefono" pattern="\(\+34\)\d{9}" id="telephone" placeholder="Ejem: (+34)922123123"/> 
+                        <span class="span-validator-message" id="telefono-validator-message" hidden></span>
+                    </div>
+                    <div>
+                        <label for="postal">Código Postal</label>
+                        <input required type="tel" name="CodigoPostal" pattern="38\d{3}" minlength="5" maxlength="5" id="postal" placeholder="38XXX"/>    
+                        <span class="span-validator-message" id="postal-validator-message" hidden></span>
+                    </div>
+                    <section>
+                        <div>
+                            <label for="dni-nie">DNI/NIE</label>
+                            <span class="span-validator-message" id="documento-validator-message" hidden></span>
+                            <select name ="TipoDocumento" id="dni-nie" required>
+                                <option value="" >---</option>
+                                <option value="DNI">DNI</option>
+                                <option value="NIE">NIE</option>
+                            </select>
+                            <input type="text" name="DniNie" id="dni--nie" pattern="[xXyYzZ1-9]\d{1,10}[ABCDEFGHJKLMNPQRSTVWXYZ]" placeholder="DNI/NIE" required disabled/>
+                            <span class="span-validator-message" id="dni-nie-validator-message" hidden></span>
+                        </div>
+                        <div>
+                            <label for="CuentaComo">Crear cuenta como:</label>
+                            <div>
+                                <input type="radio" required name="CuentaComo" id="particular" value="particular"/>
+                                <label for="particular">Particular</label>
+                                <input type="radio" required name="CuentaComo" id="empresa" value="empresa"/>
+                                <label for="empresa">Empresa</label>
+                            </div>
+                            <span class="span-validator-message" id="tipo-cuenta-validator-message" hidden></span>
+                        </div>
+                        <div>
+                            <label for="birth-year">Año de Nacimiento</label>
+                            <select required name="AnioNacimiento" id="birth-year">
+                            </select>    
+                        </div>
+                    </section>
+                    <div class="interest-container">
+                        <p>Elige tus aficiones:</p>
+                        <input type="text" hidden required name="Aficiones" id="Aficiones">
+                        <div>
+                            <input class="input-aficiones" type="checkbox" id="music" value="MU" />
+                            <label for="music">Música</label>
+                        </div>
+                        <div>
+                            <input class="input-aficiones" type="checkbox" value="DE" id="sports"/>
+                            <label for="sports">Deporte</label>
+                        </div>
+                        <div>
+                            <input class="input-aficiones" type="checkbox" value="VI" id="videogames"/>
+                            <label for="videogames">Video Juegos</label>
+                        </div>
+                        <div>
+                            <input class="input-aficiones" type="checkbox" value="MA" id="handcrafting"/>
+                            <label for="handcrafting">Manualidades</label>
+                        </div>
+                        <div>
+                            <input class="input-aficiones" type="checkbox" value="AR" id="art"/>
+                            <label for="art">Artes</label>
+                        </div>
+                        <div>
+                            <input class="input-aficiones" type="checkbox" value="LE" id="reading"/>
+                            <label for="reading">Lectura</label>
+                        </div>
+                        <span class="span-validator-message" id="aficiones-validator-message" hidden></span>
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <legend>Datos Publicación</legend>
+                    <div>
+                        <label for="titulo">Título</label>
+                        <input required type="text" name="PublicacionTitulo" pattern=".{4,15}" id="titulo" placeholder="Título" minlength="4" maxlength="15">
+                        <span id="title-length">0/15</span>
+                        <span class="span-validator-message post" id="title-validator-message" hidden></span>
+                    </div>
+                    <div>
+                        <label for="description">Descripción</label>
+                        <textarea required id="description" pattern=".{4,120}" name="PublicacionDescripcion" rows="5" minlength="4" maxlength="120"></textarea>
+                        <span id="description-length">0/120</span>
+                        <span class="span-validator-message post" id="description-validator-message" hidden></span>
+                    </div>
+                </fieldset>
+                <input type="submit" value="Enviar">
+            </form>
+        </section>
+        <section id="logger">
+            <h2 id="log-header"></h2>
+            <ul id="error-logs">
+            </ul>
+        </section>
+        <a href="#">Volver</a>
+    </div>
+    <script type="module" src="main.js"></script>
+</body>
+</html>

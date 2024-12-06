@@ -12,8 +12,8 @@ const showPassword = document.querySelector("#mostrar-contrasenia");
 dniNie.addEventListener("change", () => changeState()
 );
 //titulo
-titulo.addEventListener("change", ()=>updateCounter(titulo,titleLenght) );
-titulo.addEventListener("keyup", ()=>updateCounter(titulo, titleLenght) );
+titulo.addEventListener("change", ()=>updateCounter(titulo,titleLenght));
+titulo.addEventListener("keyup", ()=>updateCounter(titulo, titleLenght));
 //description
 description.addEventListener("change", ()=>updateCounter(description,descriptionLength) );
 description.addEventListener("keyup", ()=>updateCounter(description, descriptionLength) );
