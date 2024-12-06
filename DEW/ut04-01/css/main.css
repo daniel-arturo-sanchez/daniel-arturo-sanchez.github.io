@@ -6,12 +6,6 @@ body {
 }
 
 input:invalid {
-<<<<<<< HEAD
-    border: 2px solid red;
-}
-
-legend {
-=======
     border: 1px solid red;
   }
 
@@ -20,7 +14,6 @@ legend {
   }
 
 legend{
->>>>>>> f54ef354cb3669211f8e943737b26aefa3a62888
     font-size: 1.3em;
     font-weight: 500;
 }

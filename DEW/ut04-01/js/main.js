@@ -27,13 +27,8 @@ DOM.dniNieText.setAttribute('disabled','true');
 DOM.dniNie.addEventListener("change", () => changeState()
 );
 //titulo
-<<<<<<< HEAD
-titulo.addEventListener("change", ()=>updateCounter(titulo,titleLenght));
-titulo.addEventListener("keyup", ()=>updateCounter(titulo, titleLenght));
-=======
 DOM.titulo.addEventListener("change", ()=>updateCounter(DOM.titulo,DOM.titleLenght) );
 DOM.titulo.addEventListener("keyup", ()=>updateCounter(DOM.titulo, DOM.titleLenght) );
->>>>>>> f54ef354cb3669211f8e943737b26aefa3a62888
 //description
 DOM.description.addEventListener("change", ()=>updateCounter(DOM.description, DOM.descriptionLength) );
 DOM.description.addEventListener("keyup", ()=>updateCounter(DOM.description, DOM.descriptionLength) );
